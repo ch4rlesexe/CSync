@@ -1,0 +1,7 @@
+messages:
+  console_only: "&cThis command can only be run by a player."
+  usage: "&eUsage: &b/verify <code>"
+  invalid_auth: "&4Invalid Auth Code"
+  reload_success: "&aCSync configuration reloaded successfully!"
+  reload_usage: "&eUsage: /csync reload"
+  verify_success: "&aVerification successful!"

@@ -1,0 +1,11 @@
+name: CSync
+version: 1.0
+main: org.charlie.cSync.CSync
+api-version: 1.21.1
+commands:
+  verify:
+    description: Verifies the given code.
+    permission: cSync.use
+  csync:
+    description: Reloads the CSync plugin.
+    permission: cSync.reload

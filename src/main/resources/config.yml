@@ -1,0 +1,9 @@
+webhook_url: "discord_webhook" # Discord webhook URL
+verification_url: "https://website.com/verify.txt" # Website URL to take verification codes from
+
+discord_messages:
+  - "!uuid <discord_id> <uuid>"
+  - "!ign <discord_id> <ign>"
+  # Add more messages as needed
+#  - "!role <discord_id> member"
+#  - "!greet <discord_id> Welcome, <ign>!"
