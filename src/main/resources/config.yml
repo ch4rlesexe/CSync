@@ -1,6 +1,9 @@
 webhook_url: "discord_webhook" # Discord webhook URL
 verification_url: "https://website.com/verify.txt" # Website URL to take verification codes from
 
+# Option to include or exclude dashes in the UUID
+uuid_include_dashes: true
+
 discord_messages:
   - "!uuid <discord_id> <uuid>"
   - "!ign <discord_id> <ign>"

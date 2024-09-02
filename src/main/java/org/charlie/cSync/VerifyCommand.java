@@ -36,7 +36,14 @@ public class VerifyCommand implements CommandExecutor {
 
             if (verificationData.containsKey(code)) {
                 String discordId = verificationData.get(code);
-                sendDiscordMessages(discordId, player.getUniqueId().toString(), player.getName());
+                String uuid = player.getUniqueId().toString();
+
+                boolean includeDashes = CSync.getInstance().getConfig().getBoolean("uuid_include_dashes", true);
+                if (!includeDashes) {
+                    uuid = uuid.replace("-", "");
+                }
+
+                sendDiscordMessages(discordId, uuid, player.getName());
                 String successMessage = translateColorCodes(CSync.getInstance().getMessagesConfig().getString("messages.verify_success", "&aVerification successful!"));
                 player.sendMessage(successMessage);
             } else {
@@ -50,7 +57,13 @@ public class VerifyCommand implements CommandExecutor {
     private Map<String, String> fetchVerificationData() {
         Map<String, String> verificationData = new HashMap<>();
         try {
-            String url = CSync.getInstance().getConfig().getString("verification_url", "https://havoctiers.xyz/verify.txt");
+            String url = CSync.getInstance().getConfig().getString("verification_url");
+
+            if (url == null || url.isEmpty()) {
+                Bukkit.getLogger().warning("Verification URL is not set in the config.yml!");
+                return verificationData;
+            }
+
             BufferedReader in = new BufferedReader(new InputStreamReader(new URL(url).openStream()));
             String line;
             while ((line = in.readLine()) != null) {
