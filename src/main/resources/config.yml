@@ -10,3 +10,14 @@ discord_messages:
   # Add more messages as needed
 #  - "!role <discord_id> member"
 #  - "!greet <discord_id> Welcome, <ign>!"
+
+# World to teleport players to on join
+teleport_world: "world_name"
+
+# If enabled, it will not allow a user to do anything else in the world, and will lock down chat, movement, etc.
+enable_world_lock: false
+
+# Commands to run on unverify
+unverify_commands:
+  - "{player} has been unverified."
+#  - "kick {player} You have been unverified."

@@ -8,6 +8,5 @@ commands:
     usage: /verify <code>
     permission: cSync.use
   csync:
-    description: Reloads the CSync plugin.
-    usage: /csync reload
+    description: Reloads the CSync plugin or set the world.
     permission: cSync.reload
